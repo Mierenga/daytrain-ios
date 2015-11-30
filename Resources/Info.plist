@@ -33,6 +33,22 @@
 	<string>1522107208104572</string>
 	<key>FacebookDisplayName</key>
 	<string>DayTrain</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20130702</string>
+		<string>fbapi20131010</string>
+		<string>fbapi20131219</string>
+		<string>fbapi20140410</string>
+		<string>fbapi20140116</string>
+		<string>fbapi20150313</string>
+		<string>fbapi20150629</string>
+		<string>fbauth</string>
+		<string>fbauth2</string>
+		<string>fb-messenger-api20140430</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -63,13 +79,15 @@
 		</dict>
 	</dict>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchView</string>
+	<string>RootNavigationController</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -83,21 +101,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fbapi20130214</string>
-        <string>fbapi20130410</string>
-        <string>fbapi20130702</string>
-        <string>fbapi20131010</string>
-        <string>fbapi20131219</string>
-        <string>fbapi20140410</string>
-        <string>fbapi20140116</string>
-        <string>fbapi20150313</string>
-        <string>fbapi20150629</string>
-        <string>fbauth</string>
-        <string>fbauth2</string>
-        <string>fb-messenger-api20140430</string>
-    </array>
 </dict>
 </plist>

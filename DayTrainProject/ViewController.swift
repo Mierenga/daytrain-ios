@@ -33,8 +33,11 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         // initialize the accounts
         self.accounts = []
         
-        // This is for integrating with the iPhone device accounts
+        // Integrating with the iPhone device accounts
         //self.retreiveAccounts(ACAccountTypeIdentifierTwitter)
+        
+        //sideMenu = ENSideMenu(sourceView: self.view, menuViewController: DTMenuViewController(), menuPosition: .Left)
+        //view.bringSubviewToFront(navigationBar)
         
         
     }
@@ -79,17 +82,14 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         let user = PFUser.currentUser()
         if user == nil {
             
-            // ParseUI login
-            let loginCtrl = PFLogInViewController()
+            // ParseUI login, supports facebook
+            let loginCtrl = DTLogInViewController()
             loginCtrl.fields = [PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.Facebook]
-            loginCtrl.
             loginCtrl.delegate = self
+            loginCtrl.facebookPermissions = ["public_profile"]
             
-            // facebook permits
-            loginCtrl.facebookPermissions = ["email"]
-            
-            // signup
-            let signUpCtrl = PFSignUpViewController()
+            // signup view controller
+            let signUpCtrl = DTSignUpViewController()
             signUpCtrl.delegate = self
             loginCtrl.signUpController = signUpCtrl
             
@@ -98,7 +98,6 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             
         } else {
             
-            user?.
             self.userName.text = getWelcomeMessage(username: user?.username!)
             
         }
@@ -112,25 +111,23 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         
         let alert: UIAlertView?
         
-        // error checking
-        if username.characters.count > 20 {
-            alert = UIAlertView(title: "Username too long", message: "Max length is 20 characters", delegate: nil, cancelButtonTitle: "Choose a different username")
-            alert?.show()
-            return false
-        } else if username.characters.count == 0 && password.characters.count == 0 {
-            // it's blank
+        if username.characters.count > 0 && password.characters.count > 0 {
+            
+            return true
+            
+        } else {
+            
             alert = UIAlertView(title: "Missing Info", message: "Make sure you fill in username/password", delegate: nil, cancelButtonTitle: "OK")
             alert?.show()
+            
             return false
-        } else {
-            // it's good
-            return true
+            
         }
     }
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        self.userName.text = user.username
+        //self.userName.text = user.username
     }
     
     func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
