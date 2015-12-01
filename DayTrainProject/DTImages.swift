@@ -11,5 +11,6 @@ import UIKit
 class DTImages {
     
     static let PARSE_LOGO = UIImage(named: "DayTrainLogo1")
+//    static let MAIN_BG = UIImage(named: "dt_bg_1")
     
 }

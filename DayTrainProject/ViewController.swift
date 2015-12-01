@@ -14,9 +14,20 @@ import ParseUI
 
 class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
-    var accounts : [ACAccount]!
+    var accounts: [ACAccount]!
 
+    var sideMenu: ENSideMenu?
+    
     @IBOutlet weak var userName: UILabel!
+    
+    @IBAction func menuToggleButton(sender: UIButton) {
+        
+        if (self.sideMenu?.isMenuOpen)! {
+            self.sideMenu?.hideSideMenu()
+        } else {
+            self.sideMenu?.showSideMenu()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +47,22 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         // Integrating with the iPhone device accounts
         //self.retreiveAccounts(ACAccountTypeIdentifierTwitter)
         
-        //sideMenu = ENSideMenu(sourceView: self.view, menuViewController: DTMenuViewController(), menuPosition: .Left)
+        self.sideMenu = ENSideMenu(sourceView: self.view, menuViewController: DTMenuViewController(), menuPosition: .Left)
         //view.bringSubviewToFront(navigationBar)
         
+        setMainBackground()
+        
+        
+        
+    }
+    
+    func setMainBackground () {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "dt_bg_1")?.drawInRect(self.view.bounds)
+        let bg: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.view.backgroundColor = UIColor(patternImage: bg)
         
     }
 
