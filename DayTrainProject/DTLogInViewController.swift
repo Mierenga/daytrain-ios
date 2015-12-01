@@ -14,43 +14,40 @@ class DTLogInViewController: PFLogInViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor(red: (255.0/255.0), green: (153.0/255.0), blue: (0.0/255.0), alpha: 1.0)
-        let logo = UIImage(named: "DayTrainLogo1")
+        
+        self.view.backgroundColor = DTColors.SOFT_ORANGE
+        
+        // set the daytrain logo
+        let logo = DTImages.PARSE_LOGO
         let logoView = UIImageView(image: logo)
         self.logInView?.logo = logoView
-        self.logInView?.logInButton?.setTitle("All Aboard!", forState: UIControlState.Normal)
         
-        let logoFrame = logInView?.logo?.frame
-        
-        self.logInView?.logo?.frame = CGRectMake((logoFrame?.origin.x)!, (logoFrame?.origin.y)! - 50.0, (logoFrame?.size.width)!, (logoFrame?.size.height)!)
-        
-//        var yOffset: CGFloat = 0.0
-//        
-//        let fieldFrame = self.logInView?.usernameField?.frame
-//        self.logInView?.logo?.frame = CGRectMake(66.5, 70.0, 187.0, 58.5)
-//        self.logInView?.logInButton?.frame = CGRectMake(35.0, 385.0, 250.0, 40.0)
-//        
-//        yOffset += (fieldFrame?.size.height)!
-//        
-//        self.logInView?.usernameField?.frame = CGRectMake((fieldFrame?.origin.x)! + 5, (fieldFrame?.origin.y)!, (fieldFrame?.size.width)! - 10.0, (fieldFrame?.size.height)!)
-//        
-//        yOffset += (fieldFrame?.size.height)!
-//        
-//        self.logInView?.passwordField?.frame = CGRectMake((fieldFrame?.origin.x)! + 5, (fieldFrame?.origin.y)!, (fieldFrame?.size.width)! - 10.0, (fieldFrame?.size.height)!)
-
-        
-        
-    
-        
+        // change the log in button text
+        self.logInView?.logInButton?.setTitle("All Aboard", forState: UIControlState.Normal)
         
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        
+        // get the window view
+        let window = UIApplication.sharedApplication().delegate!.window!!
+        print(window.frame)
+        
+        let x: CGFloat = 0.0
+        let y: CGFloat = 0.0
+        let width: CGFloat = (logInView?.bounds.width)! - 60
+        
+        self.logInView?.logo?.bounds =          CGRectMake(x, y, width, (logInView?.logo?.frame.height)! + 20)
+        self.logInView?.usernameField?.bounds = CGRectMake(x, y, width, (logInView?.usernameField?.frame.height)!)
+        self.logInView?.passwordField?.bounds = CGRectMake(x, y, width, (logInView?.passwordField?.frame.height)!)
+        self.logInView?.logInButton?.bounds =   CGRectMake(x, y, width, (logInView?.logInButton?.frame.height)!)
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

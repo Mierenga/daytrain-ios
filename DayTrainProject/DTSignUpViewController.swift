@@ -14,13 +14,30 @@ class DTSignUpViewController: PFSignUpViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor(red: (255.0/255.0), green: (153.0/255.0), blue: (0.0/255.0), alpha: 1.0)
-        let logo = UIImage(named: "DayTrainLogo1")
-        let logoView = UIImageView(frame: CGRectMake(100, 150, 150, 150))
-        logoView.image = logo
         
+        self.view.backgroundColor = DTColors.SOFT_ORANGE
+        let logo = DTImages.PARSE_LOGO
+        let logoView = UIImageView(image: logo)
         self.signUpView?.logo = logoView
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        // get the window view
+        let window = UIApplication.sharedApplication().delegate!.window!!
+        print(window.frame)
+        
+        let x: CGFloat = 0.0
+        let y: CGFloat = 0.0
+        let width: CGFloat = (signUpView?.bounds.width)! - 60
+        
+        self.signUpView?.logo?.bounds =          CGRectMake(x, y, width, (signUpView?.logo?.frame.height)! + 20)
+        self.signUpView?.usernameField?.bounds = CGRectMake(x, y, width, (signUpView?.usernameField?.frame.height)!)
+        self.signUpView?.passwordField?.bounds = CGRectMake(x, y, width, (signUpView?.passwordField?.frame.height)!)
+        self.signUpView?.emailField?.bounds =    CGRectMake(x, y, width, (signUpView?.emailField?.frame.height)!)
+        self.signUpView?.signUpButton?.bounds =  CGRectMake(x, y, width, (signUpView?.signUpButton?.frame.height)!)
+        
         
     }
 

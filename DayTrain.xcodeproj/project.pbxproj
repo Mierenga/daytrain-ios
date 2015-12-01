@@ -21,6 +21,8 @@
 		B520DBB91C02965B00E80A1B /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B520DBB81C02965B00E80A1B /* LaunchView.xib */; };
 		B56AB9B51C06922E00ED2A8F /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB9B31C06922E00ED2A8F /* ENSideMenu.swift */; };
 		B56AB9B61C06922E00ED2A8F /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB9B41C06922E00ED2A8F /* ENSideMenuNavigationController.swift */; };
+		B56F3FC11C0D29DB00D553B8 /* DTColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F3FC01C0D29DA00D553B8 /* DTColors.swift */; };
+		B56F3FC31C0D2B2C00D553B8 /* DTImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F3FC21C0D2B2C00D553B8 /* DTImages.swift */; };
 		B57571F91C0A3B72005BE3CA /* DTLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57571F81C0A3B72005BE3CA /* DTLogInViewController.swift */; };
 		B57571FC1C0A4590005BE3CA /* DTSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57571FA1C0A4590005BE3CA /* DTSignUpViewController.swift */; };
 		B57572001C0A4DBF005BE3CA /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57571FE1C0A4DBF005BE3CA /* RootNavigationController.swift */; };
@@ -54,6 +56,8 @@
 		B520DBB81C02965B00E80A1B /* LaunchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		B56AB9B31C06922E00ED2A8F /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		B56AB9B41C06922E00ED2A8F /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
+		B56F3FC01C0D29DA00D553B8 /* DTColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTColors.swift; sourceTree = "<group>"; };
+		B56F3FC21C0D2B2C00D553B8 /* DTImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTImages.swift; sourceTree = "<group>"; };
 		B57571F81C0A3B72005BE3CA /* DTLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTLogInViewController.swift; sourceTree = "<group>"; };
 		B57571FA1C0A4590005BE3CA /* DTSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTSignUpViewController.swift; sourceTree = "<group>"; };
 		B57571FE1C0A4DBF005BE3CA /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
@@ -125,12 +129,14 @@
 				814C3AC61B69877600E307BB /* Main.storyboard */,
 				B59B92CE1C027BA900A41302 /* DayTrain-Bridging-Header.h */,
 				B520DBB81C02965B00E80A1B /* LaunchView.xib */,
-				B57571F81C0A3B72005BE3CA /* DTLogInViewController.swift */,
 				B57571FE1C0A4DBF005BE3CA /* RootNavigationController.swift */,
 				B57571FF1C0A4DBF005BE3CA /* RootNavigationController.xib */,
+				B57571F81C0A3B72005BE3CA /* DTLogInViewController.swift */,
 				B57571FA1C0A4590005BE3CA /* DTSignUpViewController.swift */,
 				B575723C1C0A5398005BE3CA /* DTMenuViewController.swift */,
 				B575723D1C0A5398005BE3CA /* DTMenuViewController.xib */,
+				B56F3FC01C0D29DA00D553B8 /* DTColors.swift */,
+				B56F3FC21C0D2B2C00D553B8 /* DTImages.swift */,
 			);
 			path = DayTrainProject;
 			sourceTree = "<group>";
@@ -319,6 +325,8 @@
 				B57571F91C0A3B72005BE3CA /* DTLogInViewController.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				B57572001C0A4DBF005BE3CA /* RootNavigationController.swift in Sources */,
+				B56F3FC31C0D2B2C00D553B8 /* DTImages.swift in Sources */,
+				B56F3FC11C0D29DB00D553B8 /* DTColors.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
