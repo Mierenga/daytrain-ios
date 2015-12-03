@@ -23,12 +23,10 @@
 		B56AB9B61C06922E00ED2A8F /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB9B41C06922E00ED2A8F /* ENSideMenuNavigationController.swift */; };
 		B56F3FC11C0D29DB00D553B8 /* DTColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F3FC01C0D29DA00D553B8 /* DTColors.swift */; };
 		B56F3FC31C0D2B2C00D553B8 /* DTImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F3FC21C0D2B2C00D553B8 /* DTImages.swift */; };
+		B56F3FC61C0EBB8500D553B8 /* DTMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F3FC51C0EBB8500D553B8 /* DTMenuTableViewController.swift */; };
 		B57571F91C0A3B72005BE3CA /* DTLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57571F81C0A3B72005BE3CA /* DTLogInViewController.swift */; };
 		B57571FC1C0A4590005BE3CA /* DTSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57571FA1C0A4590005BE3CA /* DTSignUpViewController.swift */; };
-		B57572001C0A4DBF005BE3CA /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57571FE1C0A4DBF005BE3CA /* RootNavigationController.swift */; };
-		B57572011C0A4DBF005BE3CA /* RootNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57571FF1C0A4DBF005BE3CA /* RootNavigationController.xib */; };
-		B575723E1C0A5398005BE3CA /* DTMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575723C1C0A5398005BE3CA /* DTMenuViewController.swift */; };
-		B575723F1C0A5398005BE3CA /* DTMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B575723D1C0A5398005BE3CA /* DTMenuViewController.xib */; };
+		B57572001C0A4DBF005BE3CA /* DTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57571FE1C0A4DBF005BE3CA /* DTNavigationController.swift */; };
 		B59B92C21C02603700A41302 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59B92C11C02603700A41302 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B59B92C41C02624F00A41302 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59B92C31C02624F00A41302 /* Accounts.framework */; };
 		B59B92C61C02625900A41302 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59B92C51C02625900A41302 /* Social.framework */; };
@@ -58,16 +56,14 @@
 		B56AB9B41C06922E00ED2A8F /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		B56F3FC01C0D29DA00D553B8 /* DTColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTColors.swift; sourceTree = "<group>"; };
 		B56F3FC21C0D2B2C00D553B8 /* DTImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTImages.swift; sourceTree = "<group>"; };
+		B56F3FC51C0EBB8500D553B8 /* DTMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTMenuTableViewController.swift; sourceTree = "<group>"; };
+		B56F3FCB1C0EBC9000D553B8 /* DayTrain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DayTrain-Bridging-Header.h"; sourceTree = "<group>"; };
 		B57571F81C0A3B72005BE3CA /* DTLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTLogInViewController.swift; sourceTree = "<group>"; };
 		B57571FA1C0A4590005BE3CA /* DTSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTSignUpViewController.swift; sourceTree = "<group>"; };
-		B57571FE1C0A4DBF005BE3CA /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
-		B57571FF1C0A4DBF005BE3CA /* RootNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootNavigationController.xib; sourceTree = "<group>"; };
-		B575723C1C0A5398005BE3CA /* DTMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTMenuViewController.swift; sourceTree = "<group>"; };
-		B575723D1C0A5398005BE3CA /* DTMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTMenuViewController.xib; sourceTree = "<group>"; };
+		B57571FE1C0A4DBF005BE3CA /* DTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTNavigationController.swift; sourceTree = "<group>"; };
 		B59B92C11C02603700A41302 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../FacebookSDKs-iOS-20151111/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		B59B92C31C02624F00A41302 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		B59B92C51C02625900A41302 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		B59B92CE1C027BA900A41302 /* DayTrain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DayTrain-Bridging-Header.h"; path = "/Users/eskimwier/Documents/DayTrain/DayTrainProject/DayTrain-Bridging-Header.h"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,20 +119,14 @@
 			isa = PBXGroup;
 			children = (
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
+				B56F3FC41C0E939800D553B8 /* SideMenu */,
+				B56F3FC81C0EBBB000D553B8 /* Constants */,
+				B56F3FC91C0EBBFC00D553B8 /* Parse */,
+				B57571FE1C0A4DBF005BE3CA /* DTNavigationController.swift */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
-				B56AB9B31C06922E00ED2A8F /* ENSideMenu.swift */,
-				B56AB9B41C06922E00ED2A8F /* ENSideMenuNavigationController.swift */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
-				B59B92CE1C027BA900A41302 /* DayTrain-Bridging-Header.h */,
 				B520DBB81C02965B00E80A1B /* LaunchView.xib */,
-				B57571FE1C0A4DBF005BE3CA /* RootNavigationController.swift */,
-				B57571FF1C0A4DBF005BE3CA /* RootNavigationController.xib */,
-				B57571F81C0A3B72005BE3CA /* DTLogInViewController.swift */,
-				B57571FA1C0A4590005BE3CA /* DTSignUpViewController.swift */,
-				B575723C1C0A5398005BE3CA /* DTMenuViewController.swift */,
-				B575723D1C0A5398005BE3CA /* DTMenuViewController.xib */,
-				B56F3FC01C0D29DA00D553B8 /* DTColors.swift */,
-				B56F3FC21C0D2B2C00D553B8 /* DTImages.swift */,
+				B56F3FCB1C0EBC9000D553B8 /* DayTrain-Bridging-Header.h */,
 			);
 			path = DayTrainProject;
 			sourceTree = "<group>";
@@ -176,6 +166,34 @@
 				5215188586F055E2414DC748 /* Pods-DayTrain.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B56F3FC41C0E939800D553B8 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B56F3FC51C0EBB8500D553B8 /* DTMenuTableViewController.swift */,
+				B56AB9B31C06922E00ED2A8F /* ENSideMenu.swift */,
+				B56AB9B41C06922E00ED2A8F /* ENSideMenuNavigationController.swift */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		B56F3FC81C0EBBB000D553B8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B56F3FC01C0D29DA00D553B8 /* DTColors.swift */,
+				B56F3FC21C0D2B2C00D553B8 /* DTImages.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		B56F3FC91C0EBBFC00D553B8 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				B57571F81C0A3B72005BE3CA /* DTLogInViewController.swift */,
+				B57571FA1C0A4590005BE3CA /* DTSignUpViewController.swift */,
+			);
+			name = Parse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B520DBB91C02965B00E80A1B /* LaunchView.xib in Resources */,
-				B57572011C0A4DBF005BE3CA /* RootNavigationController.xib in Resources */,
-				B575723F1C0A5398005BE3CA /* DTMenuViewController.xib in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
 			);
@@ -319,14 +335,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B57571FC1C0A4590005BE3CA /* DTSignUpViewController.swift in Sources */,
-				B575723E1C0A5398005BE3CA /* DTMenuViewController.swift in Sources */,
 				B56AB9B61C06922E00ED2A8F /* ENSideMenuNavigationController.swift in Sources */,
 				B56AB9B51C06922E00ED2A8F /* ENSideMenu.swift in Sources */,
 				B57571F91C0A3B72005BE3CA /* DTLogInViewController.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
-				B57572001C0A4DBF005BE3CA /* RootNavigationController.swift in Sources */,
+				B57572001C0A4DBF005BE3CA /* DTNavigationController.swift in Sources */,
 				B56F3FC31C0D2B2C00D553B8 /* DTImages.swift in Sources */,
 				B56F3FC11C0D29DB00D553B8 /* DTColors.swift in Sources */,
+				B56F3FC61C0EBB8500D553B8 /* DTMenuTableViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

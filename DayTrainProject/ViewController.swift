@@ -15,24 +15,22 @@ import ParseUI
 class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
     var accounts: [ACAccount]!
-
-    var sideMenu: ENSideMenu?
     
     @IBOutlet weak var userName: UILabel!
     
     @IBAction func menuToggleButton(sender: UIButton) {
         
-        if (self.sideMenu?.isMenuOpen)! {
-            self.sideMenu?.hideSideMenu()
-        } else {
-            self.sideMenu?.showSideMenu()
-        }
+        toggleSideMenuView()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
         
         // Send a test object to Parse
         let testObject = PFObject(className: "TestObject")
@@ -47,14 +45,12 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         // Integrating with the iPhone device accounts
         //self.retreiveAccounts(ACAccountTypeIdentifierTwitter)
         
-        self.sideMenu = ENSideMenu(sourceView: self.view, menuViewController: DTMenuViewController(), menuPosition: .Left)
-        //view.bringSubviewToFront(navigationBar)
-        
         setMainBackground()
         
-        
+        self.navigationController!.navigationBar.hidden = true
         
     }
+    
     
     func setMainBackground () {
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -122,18 +118,24 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             
         } else {
             
-            self.userName.text = getWelcomeMessage(username: user?.username!)
+            //self.userName.text = getWelcomeMessage(username: user?.username!)
             
         }
     }
     
     func getWelcomeMessage(username user: String?) -> String {
-        return "Hi, " + user!
+        
+        if user == nil {
+            return ""
+        } else {
+            return "Hi, " + user!
+        }
+        
     }
     
     func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
         
-        let alert: UIAlertView?
+        
         
         if username.characters.count > 0 && password.characters.count > 0 {
             
@@ -141,7 +143,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             
         } else {
             
-            alert = UIAlertView(title: "Missing Info", message: "Make sure you fill in username/password", delegate: nil, cancelButtonTitle: "OK")
+            let alert: UIAlertView? = UIAlertView(title: "Missing Info", message: "Make sure you fill in username/password", delegate: nil, cancelButtonTitle: "OK")
             alert?.show()
             
             return false
@@ -159,7 +161,10 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     }
     
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
-        print("failed")
+        
+        let alert : UIAlertView? = UIAlertView(title: "Incorrect Login Info", message: "We were unable to find that combination of username and password", delegate: nil, cancelButtonTitle: "OK")
+        alert?.show()
+        print("failed login")
     }
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
