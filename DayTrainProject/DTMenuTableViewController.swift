@@ -72,7 +72,6 @@ class DTMenuTableViewController: UITableViewController {
         
         print("did select row: \(indexPath.row)")
         
-        /*
         
         if (indexPath.row == selectedMenuItem) {
             return
@@ -85,17 +84,17 @@ class DTMenuTableViewController: UITableViewController {
         var destViewController : UIViewController
         switch (indexPath.row) {
         case 0:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController1")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MainView")
             break
         case 1:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController2")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TrainCarView")
             break
         default:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController3")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TrainTrackView")
             break
         }
         sideMenuController()?.setContentViewController(destViewController)
-    */
+    
         
     }
     

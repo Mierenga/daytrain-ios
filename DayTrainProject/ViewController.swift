@@ -17,6 +17,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     var accounts: [ACAccount]!
     
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var trainTrackContainer: UIView!
     
     @IBAction func menuToggleButton(sender: UIButton) {
         
@@ -51,7 +52,6 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         
     }
     
-    
     func setMainBackground () {
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "dt_bg_1")?.drawInRect(self.view.bounds)
@@ -59,6 +59,13 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         UIGraphicsEndImageContext()
         
         self.view.backgroundColor = UIColor(patternImage: bg)
+        
+        UIGraphicsBeginImageContext(trainTrackContainer.frame.size)
+        UIImage(named: "track_1")?.drawInRect(trainTrackContainer.bounds)
+        let track: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        trainTrackContainer.backgroundColor = UIColor(patternImage: track)
         
     }
 
@@ -118,20 +125,11 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             
         } else {
             
-            //self.userName.text = getWelcomeMessage(username: user?.username!)
+            // a user is logged in
             
         }
     }
     
-    func getWelcomeMessage(username user: String?) -> String {
-        
-        if user == nil {
-            return ""
-        } else {
-            return "Hi, " + user!
-        }
-        
-    }
     
     func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
         

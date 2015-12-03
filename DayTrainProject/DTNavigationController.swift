@@ -14,12 +14,12 @@ class DTNavigationController: ENSideMenuNavigationController, ENSideMenuDelegate
         super.viewDidLoad()
 
         sideMenu = ENSideMenu(sourceView: self.view, menuViewController: DTMenuTableViewController(), menuPosition:.Left)
-        //sideMenu?.delegate = self //optional
+        sideMenu?.delegate = self //optional
         sideMenu?.menuWidth = 180.0 // optional, default is 160
         sideMenu?.bouncingEnabled = false
         
         // make navigation bar show over side menu
-        view.bringSubviewToFront(navigationBar)
+        //view.bringSubviewToFront(navigationBar)
         
     }
 
@@ -30,27 +30,19 @@ class DTNavigationController: ENSideMenuNavigationController, ENSideMenuDelegate
     
     // MARK: - ENSideMenu Delegate
     func sideMenuWillOpen() {
-        print("sideMenuWillOpen")
+
     }
     
     func sideMenuWillClose() {
-        print("sideMenuWillClose")
+
     }
     
     func sideMenuDidClose() {
-        print("sideMenuClose")
+
     }
     
     func sideMenuDidOpen() {
-        print("sideMenuDidOpen")
-    }
-    
-    func toggleSideMenu() {
-        if sideMenu!.isMenuOpen {
-            sideMenu?.hideSideMenu()
-        } else {
-            sideMenu?.showSideMenu()
-        }
+        
     }
     
     /*

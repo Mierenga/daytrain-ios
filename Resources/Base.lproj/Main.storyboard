@@ -30,10 +30,65 @@
             </objects>
             <point key="canvasLocation" x="-2883" y="36"/>
         </scene>
+        <!--Train Car View Controller-->
+        <scene sceneID="BDC-BD-rNe">
+            <objects>
+                <viewController storyboardIdentifier="TrainCarView" id="bZ9-nO-V6n" customClass="TrainCarViewController" customModule="DayTrain" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J0h-Pj-aNL"/>
+                        <viewControllerLayoutGuide type="bottom" id="RpP-Va-PXT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nb0-bl-8J4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CeP-uG-OAD">
+                                <rect key="frame" x="0.0" y="44" width="600" height="512"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="N0g-hr-Uuh">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N0g-hr-Uuh" id="22e-sv-Ou4">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VA1-Y6-qiS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Your Train Cars" id="sST-1F-8oo"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eso-HZ-ZaQ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem title="Add New" id="gYt-6P-9hb"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RpP-Va-PXT" firstAttribute="top" secondItem="eso-HZ-ZaQ" secondAttribute="bottom" id="OpQ-r3-Xoc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPf-gC-yeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2883" y="757"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DayTrain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" id="BYZ-38-t0r" customClass="ViewController" customModule="DayTrain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -58,7 +113,7 @@
                                     <action selector="menuToggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NFZ-wc-99B"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqn-aF-cCQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqn-aF-cCQ">
                                 <rect key="frame" x="20" y="221" width="561" height="26"/>
                                 <animations/>
                                 <constraints>
@@ -69,49 +124,80 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to DayTrain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4f-t3-5rB">
-                                <rect key="frame" x="187" y="267" width="226" height="30"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSy-WI-x0v">
+                                <rect key="frame" x="330" y="180" width="250" height="400"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="nRP-xi-apK"/>
+                                    <constraint firstAttribute="height" constant="400" id="NdC-Ee-psh"/>
+                                    <constraint firstAttribute="width" constant="250" id="vch-bw-eOV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="0.86536595544420836" green="0.88322377106323546" blue="0.90473658376963351" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <size key="shadowOffset" width="0.0" height="1"/>
-                            </label>
+                                <connections>
+                                    <segue destination="iAl-gv-UYB" kind="embed" id="RT4-uF-9Jc"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aqn-aF-cCQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FHH-Te-LiR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vji-gh-v1X" secondAttribute="trailing" id="Kx9-SA-vzd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rSy-WI-x0v" secondAttribute="trailing" id="LnF-S8-m21"/>
                             <constraint firstItem="Vji-gh-v1X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PQt-jX-fE0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rSy-WI-x0v" secondAttribute="trailing" constant="37" id="RqN-Lt-CiB"/>
                             <constraint firstItem="aqn-aF-cCQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cYE-T8-4gP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aqn-aF-cCQ" secondAttribute="trailing" id="kHv-tC-hgR"/>
                             <constraint firstItem="aqn-aF-cCQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="q4e-Vh-IyP"/>
-                            <constraint firstItem="e4f-t3-5rB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sUP-pd-Zv7"/>
-                            <constraint firstItem="e4f-t3-5rB" firstAttribute="top" secondItem="aqn-aF-cCQ" secondAttribute="bottom" constant="20" id="w4y-x6-FLp"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e4f-t3-5rB" secondAttribute="bottom" constant="303" id="yAX-Tb-obR"/>
-                            <constraint firstItem="e4f-t3-5rB" firstAttribute="top" secondItem="aqn-aF-cCQ" secondAttribute="bottom" constant="8" id="zmd-9k-hIv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rSy-WI-x0v" secondAttribute="bottom" constant="20" id="uO4-b0-MUR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="kHv-tC-hgR"/>
                                 <exclude reference="q4e-Vh-IyP"/>
-                                <exclude reference="zmd-9k-hIv"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="2KW-Td-hgo"/>
                     <connections>
+                        <outlet property="trainTrackContainer" destination="rSy-WI-x0v" id="5xK-Ja-cl1"/>
                         <outlet property="userName" destination="aqn-aF-cCQ" id="3ZX-VB-IUA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2133" y="36"/>
+            <point key="canvasLocation" x="-2137" y="36"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vdo-lU-Ikz">
+            <objects>
+                <viewController storyboardIdentifier="TrainTrackView" id="6DN-i0-CIo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m5F-Ij-dOn"/>
+                        <viewControllerLayoutGuide type="bottom" id="5ga-RR-A2n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UeC-c0-GR1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Qy-SZ-q1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2137" y="757"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uCE-f3-0Bv">
+            <objects>
+                <viewController id="iAl-gv-UYB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Qk-FA-2Yj">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHJ-F1-s6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1504" y="36"/>
         </scene>
     </scenes>
 </document>
