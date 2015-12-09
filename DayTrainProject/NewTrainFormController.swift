@@ -52,30 +52,38 @@ class NewTrainFormController: UIViewController, UITextFieldDelegate {
     
     func addNewTrain() {
         
-        let user = PFUser()
-        
+        let user: PFUser? = PFUser()
         let newTrainCar = PFObject(className: "TrainCars")
-        newTrainCar["user"] = user.username
-        newTrainCar["activity"] = activityName.text
-        newTrainCar["days"] = daySelected
-        newTrainCar.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                print("train car saved")
-            } else {
-                print("problem saving new train car")
+        
+        if user != nil {
+        newTrainCar["user"] = user?.username
+            print("user not nil")
+            
+            newTrainCar["activity"] = activityName.text!
+            newTrainCar["days"] = daySelected
+            newTrainCar.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    print("train car saved")
+                } else {
+                    print("problem saving new train car")
+                }
             }
+        } else {
+            print("user nil")
         }
         
     }
     
     @IBAction func pressConfirmAdd(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
         
-        // build the parse object
-        //let username: String = PFUser().username!
-        addNewTrain()
-        
+        if activityName.text != "" {
+            dismissViewControllerAnimated(true, completion: nil)
+            addNewTrain()
+        } else {
+            let alert: UIAlertView? = UIAlertView(title: "", message: "Please fill in an activity", delegate: nil, cancelButtonTitle: "OK")
+            alert?.show()
+        }
     }
     
     
