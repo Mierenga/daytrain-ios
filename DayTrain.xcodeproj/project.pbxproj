@@ -31,6 +31,7 @@
 		B59B92C21C02603700A41302 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59B92C11C02603700A41302 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B59B92C41C02624F00A41302 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59B92C31C02624F00A41302 /* Accounts.framework */; };
 		B59B92C61C02625900A41302 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59B92C51C02625900A41302 /* Social.framework */; };
+		B5C85A371C135DF80071AFFB /* NewTrainFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C85A361C135DF80071AFFB /* NewTrainFormController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		B59B92C11C02603700A41302 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../FacebookSDKs-iOS-20151111/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		B59B92C31C02624F00A41302 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		B59B92C51C02625900A41302 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		B5C85A361C135DF80071AFFB /* NewTrainFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTrainFormController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +126,11 @@
 				B56F3FC41C0E939800D553B8 /* SideMenu */,
 				B56F3FC81C0EBBB000D553B8 /* Constants */,
 				B56F3FC91C0EBBFC00D553B8 /* Parse */,
+				814C3AC61B69877600E307BB /* Main.storyboard */,
 				B57571FE1C0A4DBF005BE3CA /* DTNavigationController.swift */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
-				814C3AC61B69877600E307BB /* Main.storyboard */,
 				B56F3FCC1C10022900D553B8 /* TrainCarViewController.swift */,
+				B5C85A361C135DF80071AFFB /* NewTrainFormController.swift */,
 				B520DBB81C02965B00E80A1B /* LaunchView.xib */,
 				B56F3FCB1C0EBC9000D553B8 /* DayTrain-Bridging-Header.h */,
 			);
@@ -340,6 +343,7 @@
 				B57571FC1C0A4590005BE3CA /* DTSignUpViewController.swift in Sources */,
 				B56AB9B61C06922E00ED2A8F /* ENSideMenuNavigationController.swift in Sources */,
 				B56AB9B51C06922E00ED2A8F /* ENSideMenu.swift in Sources */,
+				B5C85A371C135DF80071AFFB /* NewTrainFormController.swift in Sources */,
 				B57571F91C0A3B72005BE3CA /* DTLogInViewController.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				B57572001C0A4DBF005BE3CA /* DTNavigationController.swift in Sources */,

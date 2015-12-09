@@ -11,14 +11,13 @@ import UIKit
 import Parse
 import Accounts
 import ParseUI
+import ParseFacebookUtilsV4
 
 class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
     var accounts: [ACAccount]!
     
-    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var trainTrackContainer: UIView!
-    
     @IBAction func menuToggleButton(sender: UIButton) {
         
         toggleSideMenuView()
@@ -43,9 +42,6 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         // initialize the accounts
         self.accounts = []
         
-        // Integrating with the iPhone device accounts
-        //self.retreiveAccounts(ACAccountTypeIdentifierTwitter)
-        
         setMainBackground()
         
         self.navigationController!.navigationBar.hidden = true
@@ -54,19 +50,19 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     
     func setMainBackground () {
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "dt_bg_1")?.drawInRect(self.view.bounds)
+        UIImage(named: "dt_bg_2")?.drawInRect(self.view.bounds)
         let bg: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         self.view.backgroundColor = UIColor(patternImage: bg)
         
         UIGraphicsBeginImageContext(trainTrackContainer.frame.size)
-        UIImage(named: "track_1")?.drawInRect(trainTrackContainer.bounds)
+        UIImage(named: "track_2")?.drawInRect(trainTrackContainer.bounds)
         let track: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         trainTrackContainer.backgroundColor = UIColor(patternImage: track)
-        
+        trainTrackContainer.transform = CGAffineTransformRotate(trainTrackContainer.transform, 3.14/8)
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,22 +77,6 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             self.setupParseLogin()
         }
     }
-    
-//    func retreiveAccounts(identifier: String) {
-//        
-//        let accountStore = ACAccountStore()
-//        let accountType = accountStore.accountTypeWithAccountTypeIdentifier(identifier)
-//        
-//        accountStore.requestAccessToAccountsWithType(accountType, options: nil) { (granted: Bool, error: NSError!) -> Void in
-//            if granted {
-//                let accounts = accountStore.accountsWithAccountType(accountType) as! [ACAccount]
-//                self.accounts = accounts
-//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                    // Do something here when user successfully logs in
-//                })
-//            }
-//        }
-//    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -127,9 +107,9 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             
             // a user is logged in
             
+            
         }
     }
-    
     
     func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
         
@@ -167,7 +147,6 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        self.userName.text = user.username
     }
     
 }

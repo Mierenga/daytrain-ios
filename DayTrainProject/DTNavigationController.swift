@@ -30,7 +30,7 @@ class DTNavigationController: ENSideMenuNavigationController, ENSideMenuDelegate
     
     // MARK: - ENSideMenu Delegate
     func sideMenuWillOpen() {
-
+        
     }
     
     func sideMenuWillClose() {

@@ -10,8 +10,15 @@ import UIKit
 
 class TrainCarViewController: UIViewController {
     
+    @IBOutlet weak var addNewTrain: UIBarButtonItem!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+    
+        
         
     }
     
@@ -20,5 +27,6 @@ class TrainCarViewController: UIViewController {
         
     }
     
+
     
 }

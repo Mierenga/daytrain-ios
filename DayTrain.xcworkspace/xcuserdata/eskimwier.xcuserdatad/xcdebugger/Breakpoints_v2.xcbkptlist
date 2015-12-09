@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DayTrainProject/ViewController.swift"
-            timestampString = "470808631.769353"
+            filePath = "DayTrainProject/NewTrainFormController.swift"
+            timestampString = "471235973.791061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "addNewTrain()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

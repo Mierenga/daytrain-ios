@@ -30,10 +30,10 @@
             </objects>
             <point key="canvasLocation" x="-2883" y="36"/>
         </scene>
-        <!--Train Car View Controller-->
+        <!--TrainCarView Controller-->
         <scene sceneID="BDC-BD-rNe">
             <objects>
-                <viewController storyboardIdentifier="TrainCarView" id="bZ9-nO-V6n" customClass="TrainCarViewController" customModule="DayTrain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainCarView" id="bZ9-nO-V6n" userLabel="TrainCarView Controller" customClass="TrainCarViewController" customModule="DayTrain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J0h-Pj-aNL"/>
                         <viewControllerLayoutGuide type="bottom" id="RpP-Va-PXT"/>
@@ -42,53 +42,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CeP-uG-OAD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CeP-uG-OAD" userLabel="TrainCarTable">
                                 <rect key="frame" x="0.0" y="44" width="600" height="512"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="N0g-hr-Uuh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrainCarCell" textLabel="ZpH-NW-a5E" style="IBUITableViewCellStyleDefault" id="N0g-hr-Uuh">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N0g-hr-Uuh" id="22e-sv-Ou4">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZpH-NW-a5E">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VA1-Y6-qiS">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VA1-Y6-qiS">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="NV3-bk-uHg"/>
+                                    <constraint firstAttribute="width" constant="600" id="bAO-dg-cTy"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Your Train Cars" id="sST-1F-8oo"/>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eso-HZ-ZaQ">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eso-HZ-ZaQ">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rbc-Kp-WMz"/>
+                                </constraints>
                                 <items>
-                                    <barButtonItem title="Add New" id="gYt-6P-9hb"/>
+                                    <barButtonItem title="Add New" id="gYt-6P-9hb">
+                                        <connections>
+                                            <action selector="pressAddNewTrain:" destination="bZ9-nO-V6n" id="tcI-RS-Hjk"/>
+                                            <segue destination="YWe-hC-MIt" kind="presentation" identifier="NewTrainFormSegue" id="EeE-Io-vgK"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="CeP-uG-OAD" firstAttribute="leading" secondItem="VA1-Y6-qiS" secondAttribute="leading" id="2Rw-Ey-Q0I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eso-HZ-ZaQ" secondAttribute="trailing" constant="-20" id="8Qf-nN-WVk"/>
+                            <constraint firstItem="VA1-Y6-qiS" firstAttribute="top" secondItem="Nb0-bl-8J4" secondAttribute="topMargin" id="Cns-qC-9Wf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VA1-Y6-qiS" secondAttribute="trailing" constant="-20" id="Dis-Ry-9d1"/>
+                            <constraint firstItem="VA1-Y6-qiS" firstAttribute="leading" secondItem="Nb0-bl-8J4" secondAttribute="leadingMargin" constant="-20" id="E34-U0-03c"/>
                             <constraint firstItem="RpP-Va-PXT" firstAttribute="top" secondItem="eso-HZ-ZaQ" secondAttribute="bottom" id="OpQ-r3-Xoc"/>
+                            <constraint firstItem="RpP-Va-PXT" firstAttribute="top" secondItem="eso-HZ-ZaQ" secondAttribute="bottom" id="ReM-pc-gdj"/>
+                            <constraint firstItem="eso-HZ-ZaQ" firstAttribute="leading" secondItem="CeP-uG-OAD" secondAttribute="leading" id="bsy-Zk-nN7"/>
+                            <constraint firstItem="VA1-Y6-qiS" firstAttribute="top" secondItem="Nb0-bl-8J4" secondAttribute="topMargin" id="eYe-A5-bH9"/>
+                            <constraint firstItem="CeP-uG-OAD" firstAttribute="top" secondItem="VA1-Y6-qiS" secondAttribute="bottom" id="qE5-c4-fbg"/>
+                            <constraint firstItem="CeP-uG-OAD" firstAttribute="trailing" secondItem="VA1-Y6-qiS" secondAttribute="trailing" id="raS-2x-g4K"/>
+                            <constraint firstItem="eso-HZ-ZaQ" firstAttribute="top" secondItem="CeP-uG-OAD" secondAttribute="bottom" id="ulh-bp-tXd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addNewTrain" destination="gYt-6P-9hb" id="EZI-Ee-5Gl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPf-gC-yeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2883" y="757"/>
         </scene>
-        <!--View Controller-->
+        <!--DTHomeView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainView" id="BYZ-38-t0r" customClass="ViewController" customModule="DayTrain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" id="BYZ-38-t0r" userLabel="DTHomeView" customClass="ViewController" customModule="DayTrain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -98,34 +134,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vji-gh-v1X">
-                                <rect key="frame" x="532" y="20" width="48" height="30"/>
+                                <rect key="frame" x="495" y="28" width="85" height="47"/>
                                 <animations/>
-                                <state key="normal" title="log out"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="aQg-hL-5o6"/>
+                                    <constraint firstAttribute="width" constant="85" id="frz-md-yzk"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="log out" backgroundImage="pixel_blur">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xdO-Bm-4vY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEq-hv-dTh">
-                                <rect key="frame" x="22" y="20" width="39" height="30"/>
-                                <animations/>
-                                <state key="normal" title="menu"/>
-                                <connections>
-                                    <action selector="menuToggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NFZ-wc-99B"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqn-aF-cCQ">
-                                <rect key="frame" x="20" y="221" width="561" height="26"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="AlZ-wx-57H"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="0.86536595544420836" green="0.88322377106323546" blue="0.90473658376963351" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSy-WI-x0v">
-                                <rect key="frame" x="330" y="180" width="250" height="400"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rSy-WI-x0v">
+                                <rect key="frame" x="293" y="180" width="250" height="400"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="NdC-Ee-psh"/>
@@ -135,41 +159,56 @@
                                     <segue destination="iAl-gv-UYB" kind="embed" id="RT4-uF-9Jc"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEq-hv-dTh">
+                                <rect key="frame" x="20" y="530" width="73" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="Lze-1n-Ag1"/>
+                                    <constraint firstAttribute="height" constant="50" id="hca-iF-65m"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="menu" backgroundImage="pixel_blur">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="menuToggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NFZ-wc-99B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aqn-aF-cCQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FHH-Te-LiR"/>
+                            <constraint firstItem="AEq-hv-dTh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="29v-ne-DQA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vji-gh-v1X" secondAttribute="trailing" id="Kx9-SA-vzd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rSy-WI-x0v" secondAttribute="trailing" id="LnF-S8-m21"/>
                             <constraint firstItem="Vji-gh-v1X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PQt-jX-fE0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rSy-WI-x0v" secondAttribute="trailing" constant="37" id="RqN-Lt-CiB"/>
-                            <constraint firstItem="aqn-aF-cCQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cYE-T8-4gP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aqn-aF-cCQ" secondAttribute="trailing" id="kHv-tC-hgR"/>
-                            <constraint firstItem="aqn-aF-cCQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="q4e-Vh-IyP"/>
+                            <constraint firstItem="AEq-hv-dTh" firstAttribute="bottom" secondItem="rSy-WI-x0v" secondAttribute="bottom" id="TMW-7b-zFp"/>
+                            <constraint firstItem="Vji-gh-v1X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="hGX-R3-tEL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AEq-hv-dTh" secondAttribute="bottom" constant="20" id="jvd-CI-xNQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vji-gh-v1X" secondAttribute="trailing" id="mNk-Yi-sTd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rSy-WI-x0v" secondAttribute="bottom" constant="20" id="uO4-b0-MUR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="kHv-tC-hgR"/>
-                                <exclude reference="q4e-Vh-IyP"/>
+                                <exclude reference="LnF-S8-m21"/>
+                                <exclude reference="PQt-jX-fE0"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="2KW-Td-hgo"/>
                     <connections>
                         <outlet property="trainTrackContainer" destination="rSy-WI-x0v" id="5xK-Ja-cl1"/>
-                        <outlet property="userName" destination="aqn-aF-cCQ" id="3ZX-VB-IUA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2137" y="36"/>
         </scene>
-        <!--View Controller-->
+        <!--TrainTrackingView-->
         <scene sceneID="vdo-lU-Ikz">
             <objects>
-                <viewController storyboardIdentifier="TrainTrackView" id="6DN-i0-CIo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainTrackView" id="6DN-i0-CIo" userLabel="TrainTrackingView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m5F-Ij-dOn"/>
                         <viewControllerLayoutGuide type="bottom" id="5ga-RR-A2n"/>
@@ -183,12 +222,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Qy-SZ-q1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2137" y="757"/>
+            <point key="canvasLocation" x="-2001" y="773"/>
         </scene>
-        <!--View Controller-->
+        <!--HomeTrainView-->
         <scene sceneID="uCE-f3-0Bv">
             <objects>
-                <viewController id="iAl-gv-UYB" sceneMemberID="viewController">
+                <viewController id="iAl-gv-UYB" userLabel="HomeTrainView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ELq-Zz-1XI"/>
+                        <viewControllerLayoutGuide type="bottom" id="I01-lN-DR2"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Qk-FA-2Yj">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,5 +242,272 @@
             </objects>
             <point key="canvasLocation" x="-1504" y="36"/>
         </scene>
+        <!--NewTrainForm-->
+        <scene sceneID="kTr-qg-xQL">
+            <objects>
+                <viewController storyboardIdentifier="NewTrainForm" id="YWe-hC-MIt" userLabel="NewTrainForm" customClass="NewTrainFormController" customModule="DayTrain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7t0-ix-efV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWK-hs-iMX">
+                                <rect key="frame" x="118" y="80" width="363" height="215"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" placeholder="enter new activity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FAT-1h-izG">
+                                        <rect key="frame" x="8" y="8" width="350" height="65"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="1Dc-ka-LcV"/>
+                                            <constraint firstAttribute="height" constant="65" id="LjB-EI-c0G"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilA-7m-zGG" userLabel="WeekdayPicker">
+                                        <rect key="frame" x="6" y="83" width="350" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW3-55-foE">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="443-Aa-eZf"/>
+                                                    <constraint firstAttribute="height" constant="50" id="7im-SJ-euZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="sun">
+                                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressSunday:" destination="YWe-hC-MIt" eventType="touchUpInside" id="sJ2-MT-iGV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BZ-45-UdO">
+                                                <rect key="frame" x="49" y="0.0" width="50" height="50"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="YfW-Cz-MaN"/>
+                                                    <constraint firstAttribute="width" constant="50" id="as8-jE-vcK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="mon">
+                                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressMonday:" destination="YWe-hC-MIt" eventType="touchUpInside" id="cmS-hg-8bg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Z3-ZO-iA6">
+                                                <rect key="frame" x="150" y="0.0" width="50" height="50"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="mbT-qq-vpv"/>
+                                                    <constraint firstAttribute="height" constant="50" id="tky-fl-Xd5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="wed">
+                                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressWednesday:" destination="YWe-hC-MIt" eventType="touchUpInside" id="3f7-nG-ozT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENt-QW-YCF">
+                                                <rect key="frame" x="200" y="0.0" width="50" height="50"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="MUo-Xm-kuZ"/>
+                                                    <constraint firstAttribute="height" constant="50" id="fJX-mB-Pit"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="thurs">
+                                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressThursday:" destination="YWe-hC-MIt" eventType="touchUpInside" id="IUs-tB-ZM6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TP-Iz-MoN">
+                                                <rect key="frame" x="250" y="0.0" width="50" height="50"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="TsI-fS-d5e"/>
+                                                    <constraint firstAttribute="height" constant="50" id="bUQ-Yv-Nzd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title=" fri ">
+                                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressFriday:" destination="YWe-hC-MIt" eventType="touchUpInside" id="iBS-pr-zvi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msm-i7-4hG">
+                                                <rect key="frame" x="300" y="0.0" width="50" height="50"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="cQI-hT-JPd"/>
+                                                    <constraint firstAttribute="width" constant="50" id="fbb-Bg-3GJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title=" sat ">
+                                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressSaturday:" destination="YWe-hC-MIt" eventType="touchUpInside" id="tJf-0b-SAd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwf-YG-pve">
+                                                <rect key="frame" x="99" y="0.0" width="50" height="50"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="5Jf-cB-29G"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="tues">
+                                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressTuesday:" destination="YWe-hC-MIt" eventType="touchUpInside" id="A70-Ky-Mjh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstItem="8TP-Iz-MoN" firstAttribute="top" secondItem="ilA-7m-zGG" secondAttribute="top" id="4FZ-6t-kWp"/>
+                                            <constraint firstItem="Msm-i7-4hG" firstAttribute="top" secondItem="ilA-7m-zGG" secondAttribute="top" id="62v-o8-2cq"/>
+                                            <constraint firstItem="pW3-55-foE" firstAttribute="leading" secondItem="ilA-7m-zGG" secondAttribute="leading" id="7ew-gs-O3r"/>
+                                            <constraint firstItem="dwf-YG-pve" firstAttribute="leading" secondItem="pW3-55-foE" secondAttribute="trailing" constant="49" id="88Z-47-Xsf" userLabel="Tuesday Toggle.leading = Monday Toggle.trailing"/>
+                                            <constraint firstItem="ENt-QW-YCF" firstAttribute="leading" secondItem="8Z3-ZO-iA6" secondAttribute="trailing" id="Dll-ek-8DX"/>
+                                            <constraint firstItem="4BZ-45-UdO" firstAttribute="leading" secondItem="ilA-7m-zGG" secondAttribute="leading" constant="49" id="GyS-b5-tYi" userLabel="Monday Toggle.leading = Sunday Toggle.trailing"/>
+                                            <constraint firstItem="pW3-55-foE" firstAttribute="top" secondItem="ilA-7m-zGG" secondAttribute="top" id="Gzv-yW-EUd"/>
+                                            <constraint firstItem="Msm-i7-4hG" firstAttribute="leading" secondItem="8TP-Iz-MoN" secondAttribute="trailing" id="NEn-NW-Vbv"/>
+                                            <constraint firstItem="dwf-YG-pve" firstAttribute="top" secondItem="ilA-7m-zGG" secondAttribute="top" id="TG1-bR-6zF"/>
+                                            <constraint firstItem="8Z3-ZO-iA6" firstAttribute="centerX" secondItem="ilA-7m-zGG" secondAttribute="centerX" id="ZKA-es-0ni"/>
+                                            <constraint firstItem="4BZ-45-UdO" firstAttribute="top" secondItem="ilA-7m-zGG" secondAttribute="top" id="b2R-gi-RD6"/>
+                                            <constraint firstAttribute="width" constant="350" id="dXQ-F4-cXA"/>
+                                            <constraint firstAttribute="trailing" secondItem="Msm-i7-4hG" secondAttribute="trailing" id="djm-Vo-JBz"/>
+                                            <constraint firstAttribute="height" constant="50" id="gSi-jH-AOi"/>
+                                            <constraint firstItem="8Z3-ZO-iA6" firstAttribute="leading" secondItem="dwf-YG-pve" secondAttribute="trailing" constant="1" id="iXm-Z5-lGr" userLabel="Wednesday Toggle.leading = Tuesday Toggle.trailing"/>
+                                            <constraint firstItem="ENt-QW-YCF" firstAttribute="top" secondItem="ilA-7m-zGG" secondAttribute="top" id="mqm-xo-Hd8"/>
+                                            <constraint firstItem="8Z3-ZO-iA6" firstAttribute="top" secondItem="ilA-7m-zGG" secondAttribute="top" id="s4j-Qg-Las"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9p-qP-oGf">
+                                        <rect key="frame" x="255" y="157" width="100" height="50"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="GGp-EO-yXa"/>
+                                            <constraint firstAttribute="width" constant="100" id="X2x-GI-Gc8"/>
+                                        </constraints>
+                                        <state key="normal" title="add" backgroundImage="pixel_blur">
+                                            <color key="titleColor" red="0.93331330130256407" green="0.32827970978775012" blue="0.021367149957206986" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="confirmAdd:" destination="bZ9-nO-V6n" eventType="touchUpInside" id="Zjd-4r-X1K"/>
+                                            <action selector="pressConfirmAdd:" destination="YWe-hC-MIt" eventType="touchUpInside" id="LYO-BM-If3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMR-vA-iHC">
+                                        <rect key="frame" x="8" y="157" width="100" height="50"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Hql-JP-Tfe"/>
+                                            <constraint firstAttribute="height" constant="50" id="zLK-Fj-hxw"/>
+                                        </constraints>
+                                        <state key="normal" title="cancel" backgroundImage="pixel_blur">
+                                            <color key="titleColor" red="0.93331330130256407" green="0.32827970978775012" blue="0.021367149957206986" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="confirmCancel:" destination="bZ9-nO-V6n" eventType="touchUpInside" id="3oi-gJ-nrP"/>
+                                            <action selector="pressConfirmCancel:" destination="YWe-hC-MIt" eventType="touchUpInside" id="dBP-RC-3S7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.85280448720000002" green="0.53150043499999999" blue="0.089767243859999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="363" id="8oa-dn-pjF"/>
+                                    <constraint firstItem="ilA-7m-zGG" firstAttribute="top" secondItem="FAT-1h-izG" secondAttribute="bottom" constant="10" id="EFG-0W-C2C"/>
+                                    <constraint firstItem="ilA-7m-zGG" firstAttribute="leading" secondItem="FAT-1h-izG" secondAttribute="leading" constant="-2" id="Egb-my-ubX"/>
+                                    <constraint firstItem="jMR-vA-iHC" firstAttribute="leading" secondItem="bWK-hs-iMX" secondAttribute="leading" constant="8" id="G18-qQ-ij4"/>
+                                    <constraint firstItem="FAT-1h-izG" firstAttribute="top" secondItem="bWK-hs-iMX" secondAttribute="top" constant="8" id="G4N-yh-13B"/>
+                                    <constraint firstAttribute="bottom" secondItem="jMR-vA-iHC" secondAttribute="bottom" constant="8" id="Mu3-n1-kOE"/>
+                                    <constraint firstAttribute="bottom" secondItem="O9p-qP-oGf" secondAttribute="bottom" constant="8" id="SQj-Ku-QBw"/>
+                                    <constraint firstAttribute="trailing" secondItem="O9p-qP-oGf" secondAttribute="trailing" constant="8" id="WPn-ai-dVR"/>
+                                    <constraint firstAttribute="height" constant="215" id="ly0-5T-Hwv"/>
+                                    <constraint firstItem="FAT-1h-izG" firstAttribute="centerX" secondItem="bWK-hs-iMX" secondAttribute="centerX" constant="1.5" id="z9q-lk-9Ih"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <constraints>
+                            <constraint firstItem="bWK-hs-iMX" firstAttribute="centerX" secondItem="7t0-ix-efV" secondAttribute="centerX" id="EE8-0W-cLn"/>
+                            <constraint firstItem="bWK-hs-iMX" firstAttribute="top" secondItem="7t0-ix-efV" secondAttribute="topMargin" constant="80" id="Hni-sq-cHB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityName" destination="FAT-1h-izG" id="ANk-1E-wsO"/>
+                        <outlet property="confirmAdd" destination="O9p-qP-oGf" id="bN9-lO-ax3"/>
+                        <outlet property="confirmCancel" destination="jMR-vA-iHC" id="jQc-ZK-Pss"/>
+                        <outlet property="fridayToggle" destination="8TP-Iz-MoN" id="2v1-VF-dYQ"/>
+                        <outlet property="mondayToggle" destination="4BZ-45-UdO" id="aCw-f6-wxV"/>
+                        <outlet property="saturdayToggle" destination="Msm-i7-4hG" id="A2p-qX-pUV"/>
+                        <outlet property="sundayToggle" destination="pW3-55-foE" id="Ul6-Gf-aQj"/>
+                        <outlet property="thursdayToggle" destination="ENt-QW-YCF" id="r82-TU-jAv"/>
+                        <outlet property="tuesdayToggle" destination="dwf-YG-pve" id="Y1j-7H-6em"/>
+                        <outlet property="wednesdayToggle" destination="8Z3-ZO-iA6" id="Dpe-FI-6m3"/>
+                        <outlet property="weekdayPicker" destination="ilA-7m-zGG" id="DPf-n3-1qo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IhU-bp-Fc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2883" y="1496"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="pixel_blur" width="354" height="130"/>
+    </resources>
 </document>

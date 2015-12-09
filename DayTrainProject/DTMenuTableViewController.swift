@@ -59,7 +59,23 @@ class DTMenuTableViewController: UITableViewController {
             
         }
         
-        cell!.textLabel?.text = "ViewController #\(indexPath.row+1)"
+        var title : String = ""
+        
+        switch (indexPath.row) {
+        case 0:
+            title = "home"
+            break
+        case 1:
+            title = "cars"
+            break
+        case 2:
+            title = "track"
+            break
+        default:
+            title = ""
+        }
+        
+        cell!.textLabel?.text = title
         
         return cell!
     }
